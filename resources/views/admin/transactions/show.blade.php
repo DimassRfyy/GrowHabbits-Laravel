@@ -56,7 +56,6 @@
                         </div>                        
                     </div>
                 </div>
-                @if (Auth::user()->is_paid = false)
                 <hr class="my-5">
                 <form action="{{ route('admin.subscribe_transactions.update', $subscribeTransaction) }}" method="POST">
                     @csrf
@@ -64,8 +63,7 @@
                     <button type="submit" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                         Approve Transaction
                     </button>
-                </form>
-                @endif
+                </form> 
             </div>
         </div>
     </div>
