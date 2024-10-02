@@ -62,6 +62,20 @@
                         <x-input-error :messages="$errors->get('about')" class="mt-2" />
                     </div>
 
+                    <!-- Input for WhatsApp Group Link -->
+                    <div class="mt-4">
+                        <x-input-label for="grup_wa" :value="__('WhatsApp Group Link')" />
+                        <x-text-input id="grup_wa" class="block mt-1 w-full" type="text" name="grup_wa" value="{{ $course->grup_wa }}" autofocus autocomplete="grup_wa" />
+                        <x-input-error :messages="$errors->get('grup_wa')" class="mt-2" />
+                    </div>
+                
+                    <!-- Input for Discord Group Link -->
+                    <div class="mt-4">
+                        <x-input-label for="grup_discord" :value="__('Discord Group Link')" />
+                        <x-text-input id="grup_discord" class="block mt-1 w-full" type="text" name="grup_discord" value="{{ $course->grup_discord }}" autofocus autocomplete="grup_discord" />
+                        <x-input-error :messages="$errors->get('grup_discord')" class="mt-2" />
+                    </div>
+
                     <hr class="my-5">
 
                     <div class="mt-4">

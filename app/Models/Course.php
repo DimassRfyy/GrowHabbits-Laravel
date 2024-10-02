@@ -18,6 +18,8 @@ class Course extends Model
         'slug',
         'path_trailer',
         'about',
+        'grup_wa',
+        'grup_discord',
         'thumbnail',
         'category_id',
         'teacher_id',

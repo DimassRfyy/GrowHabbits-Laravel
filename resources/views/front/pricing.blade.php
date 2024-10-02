@@ -27,10 +27,10 @@
                     <a href="{{ route('front.pricing') }}" class="font-semibold">Pricing</a>
                 </li>
                 <li>
-                    <a href="" class="font-semibold">Benefits</a>
+                    <a href="{{ route('showQuestions') }}" class="font-semibold">Rekomendasi</a>
                 </li>
                 <li>
-                    <a href="" class="font-semibold">Stories</a>
+                    <a href="" class="font-semibold">Contact</a>
                 </li>
             </ul>
             @auth

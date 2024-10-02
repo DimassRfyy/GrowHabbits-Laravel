@@ -57,6 +57,8 @@
                     </div>
                 </div>
                 <hr class="my-5">
+                @if ($subscribeTransaction->is_paid)
+                @else
                 <form action="{{ route('admin.subscribe_transactions.update', $subscribeTransaction) }}" method="POST">
                     @csrf
                     @method('PUT')
@@ -64,6 +66,7 @@
                         Approve Transaction
                     </button>
                 </form> 
+                @endif
             </div>
         </div>
     </div>

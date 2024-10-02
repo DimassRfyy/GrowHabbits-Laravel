@@ -22,10 +22,10 @@
                     <a href="{{ route('front.pricing') }}" class="font-semibold">Pricing</a>
                 </li>
                 <li>
-                    <a href="" class="font-semibold">Benefits</a>
+                    <a href="{{ route('showQuestions') }}" class="font-semibold">Rekomendasi</a>
                 </li>
                 <li>
-                    <a href="" class="font-semibold">Stories</a>
+                    <a href="" class="font-semibold">Contact</a>
                 </li>
             </ul>
             @auth
@@ -61,7 +61,7 @@
             <div class="flex flex-col gap-[10px]">
                 <h1 class="font-semibold text-[80px] leading-[82px] text-center gradient-text-hero">Build Future Career.</h1>
                 <p class="text-center text-xl leading-[36px] text-[#F5F8FA]">GrowHabbits provides high quality online courses for you to grow <br>
-                    your skills and build outstanding portfolio to tackle job interviews</p>
+                    your Hobbies and build good habits </p>
             </div>
             <div class="flex gap-6 w-fit">
                 <a href="" class="text-white font-semibold rounded-[30px] p-[16px_32px] bg-[#FF6129] transition-all duration-300 hover:shadow-[0_10px_20px_0_#FF612980]">Explore Courses</a>
@@ -248,7 +248,7 @@
                             </div>
                             <p class="font-semibold">Shayna</p>
                         </div>
-                        <p class="text-sm text-[#475466]">Alqowy has helped me to grow from zero to perfect career, thank you!</p>
+                        <p class="text-sm text-[#475466]">GrowHabbits has helped me to grow from zero to perfect career, thank you!</p>
                         <div class="flex gap-[2px]">
                             <div>
                                 <img src="assets/icon/star.svg" alt="star">
@@ -274,7 +274,7 @@
                             </div>
                             <p class="font-semibold">Shayna</p>
                         </div>
-                        <p class="text-sm text-[#475466]">Alqowy has helped me to grow from zero to perfect career, thank you!</p>
+                        <p class="text-sm text-[#475466]">GrowHabbits has helped me to grow from zero to perfect career, thank you!</p>
                         <div class="flex gap-[2px]">
                             <div>
                                 <img src="assets/icon/star.svg" alt="star">
@@ -300,7 +300,7 @@
                             </div>
                             <p class="font-semibold">Shayna</p>
                         </div>
-                        <p class="text-sm text-[#475466]">Alqowy has helped me to grow from zero to perfect career, thank you!</p>
+                        <p class="text-sm text-[#475466]">GrowHabbits has helped me to grow from zero to perfect career, thank you!</p>
                         <div class="flex gap-[2px]">
                             <div>
                                 <img src="assets/icon/star.svg" alt="star">
@@ -326,7 +326,7 @@
                             </div>
                             <p class="font-semibold">Shayna</p>
                         </div>
-                        <p class="text-sm text-[#475466]">Alqowy has helped me to grow from zero to perfect career, thank you!</p>
+                        <p class="text-sm text-[#475466]">GrowHabbits has helped me to grow from zero to perfect career, thank you!</p>
                         <div class="flex gap-[2px]">
                             <div>
                                 <img src="assets/icon/star.svg" alt="star">
@@ -354,7 +354,7 @@
                             </div>
                             <p class="font-semibold">Shayna</p>
                         </div>
-                        <p class="text-sm text-[#475466]">Alqowy has helped me to grow from zero to perfect career, thank you!</p>
+                        <p class="text-sm text-[#475466]">GrowHabbits has helped me to grow from zero to perfect career, thank you!</p>
                         <div class="flex gap-[2px]">
                             <div>
                                 <img src="assets/icon/star.svg" alt="star">
@@ -380,7 +380,7 @@
                         </div>
                         <p class="font-semibold">Shayna</p>
                     </div>
-                    <p class="text-sm text-[#475466]">Alqowy has helped me to grow from zero to perfect career, thank you!</p>
+                    <p class="text-sm text-[#475466]">GrowHabbits has helped me to grow from zero to perfect career, thank you!</p>
                     <div class="flex gap-[2px]">
                         <div>
                             <img src="assets/icon/star.svg" alt="star">
@@ -406,7 +406,7 @@
                         </div>
                         <p class="font-semibold">Shayna</p>
                     </div>
-                    <p class="text-sm text-[#475466]">Alqowy has helped me to grow from zero to perfect career, thank you!</p>
+                    <p class="text-sm text-[#475466]">GrowHabbits has helped me to grow from zero to perfect career, thank you!</p>
                     <div class="flex gap-[2px]">
                         <div>
                             <img src="assets/icon/star.svg" alt="star">
@@ -432,7 +432,7 @@
                         </div>
                         <p class="font-semibold">Shayna</p>
                     </div>
-                    <p class="text-sm text-[#475466]">Alqowy has helped me to grow from zero to perfect career, thank you!</p>
+                    <p class="text-sm text-[#475466]">GrowHabbits has helped me to grow from zero to perfect career, thank you!</p>
                     <div class="flex gap-[2px]">
                         <div>
                             <img src="assets/icon/star.svg" alt="star">
@@ -462,7 +462,7 @@
                         </div>
                         <p class="font-semibold">Shayna</p>
                     </div>
-                    <p class="text-sm text-[#475466]">Alqowy has helped me to grow from zero to perfect career, thank you!</p>
+                    <p class="text-sm text-[#475466]">GrowHabbits has helped me to grow from zero to perfect career, thank you!</p>
                     <div class="flex gap-[2px]">
                         <div>
                             <img src="assets/icon/star.svg" alt="star">
@@ -488,7 +488,7 @@
                             </div>
                             <p class="font-semibold">Shayna</p>
                         </div>
-                        <p class="text-sm text-[#475466]">Alqowy has helped me to grow from zero to perfect career, thank you!</p>
+                        <p class="text-sm text-[#475466]">GrowHabbits has helped me to grow from zero to perfect career, thank you!</p>
                         <div class="flex gap-[2px]">
                             <div>
                                 <img src="assets/icon/star.svg" alt="star">
@@ -514,7 +514,7 @@
                             </div>
                             <p class="font-semibold">Shayna</p>
                         </div>
-                        <p class="text-sm text-[#475466]">Alqowy has helped me to grow from zero to perfect career, thank you!</p>
+                        <p class="text-sm text-[#475466]">GrowHabbits has helped me to grow from zero to perfect career, thank you!</p>
                         <div class="flex gap-[2px]">
                             <div>
                                 <img src="assets/icon/star.svg" alt="star">
@@ -540,7 +540,7 @@
                             </div>
                             <p class="font-semibold">Shayna</p>
                         </div>
-                        <p class="text-sm text-[#475466]">Alqowy has helped me to grow from zero to perfect career, thank you!</p>
+                        <p class="text-sm text-[#475466]">GrowHabbits has helped me to grow from zero to perfect career, thank you!</p>
                         <div class="flex gap-[2px]">
                             <div>
                                 <img src="assets/icon/star.svg" alt="star">
@@ -568,7 +568,7 @@
                             </div>
                             <p class="font-semibold">Shayna</p>
                         </div>
-                        <p class="text-sm text-[#475466]">Alqowy has helped me to grow from zero to perfect career, thank you!</p>
+                        <p class="text-sm text-[#475466]">GrowHabbits has helped me to grow from zero to perfect career, thank you!</p>
                         <div class="flex gap-[2px]">
                             <div>
                                 <img src="assets/icon/star.svg" alt="star">
@@ -594,7 +594,7 @@
                             </div>
                             <p class="font-semibold">Shayna</p>
                         </div>
-                        <p class="text-sm text-[#475466]">Alqowy has helped me to grow from zero to perfect career, thank you!</p>
+                        <p class="text-sm text-[#475466]">GrowHabbits has helped me to grow from zero to perfect career, thank you!</p>
                         <div class="flex gap-[2px]">
                             <div>
                                 <img src="assets/icon/star.svg" alt="star">
@@ -620,7 +620,7 @@
                             </div>
                             <p class="font-semibold">Shayna</p>
                         </div>
-                        <p class="text-sm text-[#475466]">Alqowy has helped me to grow from zero to perfect career, thank you!</p>
+                        <p class="text-sm text-[#475466]">GrowHabbits has helped me to grow from zero to perfect career, thank you!</p>
                         <div class="flex gap-[2px]">
                             <div>
                                 <img src="assets/icon/star.svg" alt="star">
@@ -646,7 +646,7 @@
                             </div>
                             <p class="font-semibold">Shayna</p>
                         </div>
-                        <p class="text-sm text-[#475466]">Alqowy has helped me to grow from zero to perfect career, thank you!</p>
+                        <p class="text-sm text-[#475466]">GrowHabbits has helped me to grow from zero to perfect career, thank you!</p>
                         <div class="flex gap-[2px]">
                             <div>
                                 <img src="assets/icon/star.svg" alt="star">

@@ -24,6 +24,7 @@ class UpdateCategoryRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'icon' => ['sometimes', 'image', 'mimes:jpg,png,jpeg,svg'],
+            'type' => 'required|in:social,personal,keduanya',
         ];
     }
 }

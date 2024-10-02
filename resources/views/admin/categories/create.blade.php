@@ -19,26 +19,40 @@
                 
                 <form method="POST" action="{{ route('admin.categories.store') }}" enctype="multipart/form-data">
                     @csrf
-
+                
+                    <!-- Input Name -->
                     <div>
                         <x-input-label for="name" :value="__('Name')" />
                         <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
                     </div>
-
+                
+                    <!-- Input Icon -->
                     <div class="mt-4">
-                        <x-input-label for="icon" :value="__('icon')" />
+                        <x-input-label for="icon" :value="__('Icon')" />
                         <x-text-input id="icon" class="block mt-1 w-full" type="file" name="icon" required autofocus autocomplete="icon" />
                         <x-input-error :messages="$errors->get('icon')" class="mt-2" />
                     </div>
-
+                
+                    <!-- Input Type (Newly Added) -->
+                    <div class="mt-4">
+                        <x-input-label for="type" :value="__('Type')" />
+                        <select id="type" name="type" class="block mt-1 w-full" required>
+                            <option value="social" {{ old('type') == 'social' ? 'selected' : '' }}>Social</option>
+                            <option value="personal" {{ old('type') == 'personal' ? 'selected' : '' }}>Personal</option>
+                            <option value="keduanya" {{ old('type') == 'keduanya' ? 'selected' : '' }}>Keduanya</option>
+                        </select>
+                        <x-input-error :messages="$errors->get('type')" class="mt-2" />
+                    </div>
+                
+                    <!-- Submit Button -->
                     <div class="flex items-center justify-end mt-4">
-            
                         <button type="submit" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                             Add New Category
                         </button>
                     </div>
                 </form>
+                
 
             </div>
         </div>

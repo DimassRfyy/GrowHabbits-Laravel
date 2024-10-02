@@ -6,6 +6,7 @@
     <link href="{{ asset('css/output.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <link
@@ -27,10 +28,10 @@
                     <a href="{{ route('front.pricing') }}" class="font-semibold">Pricing</a>
                 </li>
                 <li>
-                    <a href="" class="font-semibold">Benefits</a>
+                    <a href="{{ route('showQuestions') }}" class="font-semibold">Rekomendasi</a>
                 </li>
                 <li>
-                    <a href="" class="font-semibold">Stories</a>
+                    <a href="" class="font-semibold">Contact</a>
                 </li>
             </ul>
             @auth
@@ -137,11 +138,11 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-[1100px] w-full mx-auto mt-10 tablink-container flex gap-3 px-4 sm:p-0 no-scrollbar overflow-x-scroll">
+        <div class="max-w-[1100px] w-full mx-auto mt-10 tablink-container flex gap-5 px-4 sm:p-0 no-scrollbar overflow-x-scroll">
             <div class="tablink font-semibold text-lg h-[47px] transition-all duration-300 cursor-pointer hover:text-[#FF6129]" onclick="openPage('About', this)"  id="defaultOpen">About</div>
             <div class="tablink font-semibold text-lg h-[47px] transition-all duration-300 cursor-pointer hover:text-[#FF6129]" onclick="openPage('Resources', this)">Resources</div>
             <div class="tablink font-semibold text-lg h-[47px] transition-all duration-300 cursor-pointer hover:text-[#FF6129]" onclick="openPage('Reviews', this)">Reviews</div>
-            <div class="tablink font-semibold text-lg h-[47px] transition-all duration-300 cursor-pointer hover:text-[#FF6129]" onclick="openPage('Discussions', this)">Discussions</div>
+            <div class="tablink font-semibold text-lg h-[47px] transition-all duration-300 cursor-pointer hover:text-[#FF6129]" onclick="openPage('Discussions', this)">Community</div>
             <div class="tablink font-semibold text-lg h-[47px] transition-all duration-300 cursor-pointer hover:text-[#FF6129]" onclick="openPage('Rewards', this)">Rewards</div>
         </div>
         <div class="bg-[#F5F8FA] py-[50px]">
@@ -186,10 +187,25 @@
                         </div>
                         <div id="Discussions" class="tabcontent hidden">
                             <div class="flex flex-col gap-5 w-[700px] shrink-0">
-                                <h3 class="font-bold text-2xl">Discussions</h3>
+                                <h3 class="font-bold text-2xl">Community</h3>
                                 <p class="font-medium leading-[30px]">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eos et accusantium quia exercitationem reiciendis? Doloribus, voluptate natus voluptas deserunt aliquam nesciunt blanditiis ipsum porro hic! Iusto maxime ullam soluta.
-                                </p>                        
+                                    Join Grup Community dan temukan teman untuk diskusi dan belajar bersama.
+                                </p>  
+                                <div class="grid grid-cols-2">
+                                    <div class="flex gap-3">
+                                        <a class="flex gap-3 p-2 items-center" href="{{ $course->grup_wa }}">
+                                            <i class="fa-brands fa-whatsapp fa-2xl" style="color: #63E6BE;"></i>
+                                         <p>Grup Whatsapp</p> 
+                                        </a>
+                                </div>
+                                    <div class="flex gap-3">
+                                        <a class="flex gap-3 p-2 items-center" href="{{ $course->grup_discord }}">
+                                            <i class="fa-brands fa-discord fa-2xl" style="color: #1939d7;"></i>
+                                         <p>Grup Discord</p> 
+                                        </a>
+                                </div>
+                                </div>
+                                                      
                             </div>
                         </div>
                         <div id="Rewards" class="tabcontent hidden">
@@ -252,7 +268,7 @@
                     </div>
                 </div>
                 <div id="Screenshots" class="flex flex-col gap-3">
-                    <h3 class="title-section font-bold text-xl leading-[30px] ">Students Portfolio</h3>
+                    <h3 class="title-section font-bold text-xl leading-[30px] ">Sneak Peek</h3>
                     <div class="grid grid-cols-4 gap-5">
                         <div class="rounded-[20px] overflow-hidden w-full h-[200px] hover:shadow-[0_10px_20px_0_#0D051D20] transition-all duration-300" data-src="{{ asset('assets/thumbnail/image.png') }}" data-fancybox="gallery" data-caption="Caption #1">
                           <img src="{{ asset('assets/thumbnail/image.png') }}" class="object-cover h-full w-full" alt="image">

@@ -24,6 +24,7 @@ class StoreCategoryRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'icon' => ['required', 'image', 'mimes:jpg,png,jpeg,svg'],
+            'type' => 'required|in:social,personal,keduanya',
         ];
     }
 }

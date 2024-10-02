@@ -14,7 +14,7 @@ class FrontController extends Controller
 {
     public function index (){
         $categories = Category::all();
-        $courses = Course::inRandomOrder()->get();
+        $courses = Course::inRandomOrder()->take(6)->get();
         return view('front.index', compact('categories','courses'));
     }
 
@@ -49,6 +49,10 @@ class FrontController extends Controller
         return view('front.checkout');
     }
 
+    public function success_transaction () {
+        return view('front.success_transaction');
+    }
+
     public function checkout_store(StoreSubscribeTransactionRequest $request) {
         $user = Auth::user();
         if ($user->hasActiveSubscription()) {
@@ -69,6 +73,59 @@ class FrontController extends Controller
             $transaction = SubscribeTransaction::create($validated);
         });
 
-        return redirect()->route('front.index');
+        return redirect()->route('front.success-transaction');
     }
+
+    public function showQuestions()
+    {
+        $questions = [
+            "Apakah menurut Anda membaca buku itu membosankan?",
+            "Apakah Anda tidak suka bepergian sendirian?",
+            "Apakah Anda kesulitan belajar hanya dengan teori dan lebih mudah jika langsung praktek ?",
+            "Apakah Anda lebih suka menghadiri acara sosial seperti pesta atau pertemuan besar?",
+            "Apakah Anda senang bertemu dengan orang-orang baru dan menjalin pertemanan?",
+            "Apakah Anda sering mencari kesempatan untuk berpartisipasi dalam kegiatan sosial atau komunitas?",
+            "Apakah Anda menikmati menghabiskan waktu di tempat umum seperti kafe atau pusat perbelanjaan?",
+            "Apakah Anda merasa lebih nyaman berkomunikasi secara langsung, baik itu dalam percakapan tatap muka atau panggilan video?",
+            "Apakah Anda lebih suka kegiatan yang melibatkan kolaborasi, seperti olahraga tim atau proyek kelompok?",
+            "Apakah Anda tidak suka menatap komputer dengan waktu yang lama?",
+            "Saat Bermain Bola Anda lebih suka jadi Striker dibanding Kiper?"
+        ];
+
+        return view('front.questions', compact('questions'));
+    }
+
+    public function processAnswers(Request $request)
+    {
+        $answers = $request->all();
+        
+        // Hitung jumlah 'Iya'
+        $yesCount = collect($answers)->filter(function ($answer) {
+            return $answer === 'yes';
+        })->count();
+
+        // Hitung jumlah 'Tidak'
+        $noCount = count($answers) - $yesCount;
+
+        // Tentukan kepribadian
+        $personality = $yesCount > $noCount ? 'social' : 'personal';
+
+        return redirect()->route('recommendations', ['personality' => $personality]);
+    }
+
+    public function getRecommendations($personality)
+{
+    if ($personality === 'social') {
+        $recommendedCourses = Course::whereHas('category', function ($query) {
+            $query->whereIn('type', ['social', 'keduanya']);
+        })->get();;
+    } else {
+        $recommendedCourses = Course::whereHas('category', function ($query) {
+            $query->whereIn('type', ['personal', 'keduanya']);
+        })->get();;
+    }
+
+    return view('front.recommendations', compact('recommendedCourses'));
+}
+
 }

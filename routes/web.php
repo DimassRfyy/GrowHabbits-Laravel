@@ -23,6 +23,15 @@ Route::get('/category/{category:slug}',[FrontController::class,'category'])
 Route::get('/pricing',[FrontController::class,'pricing'])
     ->name('front.pricing');
 
+Route::get('/questions', [FrontController::class, 'showQuestions'])
+    ->name('showQuestions');
+
+Route::post('/process-answers', [FrontController::class, 'processAnswers'])
+    ->name('processAnswers');
+    
+Route::get('/recommendations/{personality}', [FrontController::class, 'getRecommendations'])
+    ->name('recommendations');
+
 Route::middleware('auth')->group(function () {
     Route::get('/checkout',[FrontController::class,'checkout'])
     ->name('front.checkout')
@@ -31,6 +40,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/checkout/store',[FrontController::class,'checkout_store'])
     ->name('front.checkout.store')
     ->middleware('role:student');
+
+    Route::get('/success-transaction',[FrontController::class,'success_transaction'])
+    ->name('front.success-transaction');
 
     Route::get('/learning/{course}/{courseVideoId}',[FrontController::class,'learning'])
     ->name('front.learning')

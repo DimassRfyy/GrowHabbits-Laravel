@@ -27,10 +27,10 @@
                     <a href="{{ route('front.pricing') }}" class="font-semibold">Pricing</a>
                 </li>
                 <li>
-                    <a href="" class="font-semibold">Benefits</a>
+                    <a href="{{ route('showQuestions') }}" class="font-semibold">Rekomendasi</a>
                 </li>
                 <li>
-                    <a href="" class="font-semibold">Stories</a>
+                    <a href="" class="font-semibold">Contact</a>
                 </li>
             </ul>
             @auth
@@ -82,18 +82,25 @@
     @php
         // Memeriksa apakah video saat ini adalah video yang sedang ditonton
         $isActive = request('courseVideoId') == $video->id;
+        $hasActiveSubscription = Auth::check() && Auth::user()->hasActiveSubscription();
     @endphp
     <div class="group p-[12px_16px] flex items-center gap-[10px] rounded-full transition-all duration-300 
-        {{ $isActive ? 'bg-[#3525B3] hover:bg-[#3525B3]' : 'bg-[#E9EFF3] hover:bg-[#3525B3]' }}">
-        <div class="{{ $isActive ? 'text-white' : 'text-[#3525B3]' }} group-hover:text-white transition-all duration-300">
+    {{ $isActive ? 'bg-[#3525B3] hover:bg-[#3525B3]' : 'bg-[#E9EFF3] hover:bg-[#3525B3]' }}">
+    <div class="{{ $isActive ? 'text-white' : 'text-[#3525B3]' }} group-hover:text-white transition-all duration-300">
+        @if ($hasActiveSubscription)
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11.97 2C6.44997 2 1.96997 6.48 1.96997 12C1.96997 17.52 6.44997 22 11.97 22C17.49 22 21.97 17.52 21.97 12C21.97 6.48 17.5 2 11.97 2ZM14.97 14.23L12.07 15.9C11.71 16.11 11.31 16.21 10.92 16.21C10.52 16.21 10.13 16.11 9.76997 15.9C9.04997 15.48 8.61997 14.74 8.61997 13.9V10.55C8.61997 9.72 9.04997 8.97 9.76997 8.55C10.49 8.13 11.35 8.13 12.08 8.55L14.98 10.22C15.7 10.64 16.13 11.38 16.13 12.22C16.13 13.06 15.7 13.81 14.97 14.23Z" fill="currentColor"/>
             </svg>
-        </div>
-        <a href="{{ route('front.learning', [$course, 'courseVideoId' => $video->id]) }}">
-            <p class="font-semibold group-hover:text-white transition-all duration-300 {{ $isActive ? 'text-white' : 'text-[#3525B3]' }}">{{ $video->name }}</p>
-        </a>
+        @else
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M144 144l0 48 160 0 0-48c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192l0-48C80 64.5 144.5 0 224 0s144 64.5 144 144l0 48 16 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0z" fill="currentColor"/>
+            </svg>
+        @endif
     </div>
+    <a href="{{ route('front.learning', [$course, 'courseVideoId' => $video->id]) }}">
+        <p class="font-semibold group-hover:text-white transition-all duration-300 {{ $isActive ? 'text-white' : 'text-[#3525B3]' }}">{{ $video->name }}</p>
+    </a>
+</div>
 @empty
     <p>Video Tidak Ada</p>
 @endforelse
@@ -131,11 +138,11 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-[1100px] w-full mx-auto mt-10 tablink-container flex gap-3 px-4 sm:p-0 no-scrollbar overflow-x-scroll">
+        <div class="max-w-[1100px] w-full mx-auto mt-10 tablink-container flex gap-5 px-4 sm:p-0 no-scrollbar overflow-x-scroll">
             <div class="tablink font-semibold text-lg h-[47px] transition-all duration-300 cursor-pointer hover:text-[#FF6129]" onclick="openPage('About', this)"  id="defaultOpen">About</div>
             <div class="tablink font-semibold text-lg h-[47px] transition-all duration-300 cursor-pointer hover:text-[#FF6129]" onclick="openPage('Resources', this)">Resources</div>
             <div class="tablink font-semibold text-lg h-[47px] transition-all duration-300 cursor-pointer hover:text-[#FF6129]" onclick="openPage('Reviews', this)">Reviews</div>
-            <div class="tablink font-semibold text-lg h-[47px] transition-all duration-300 cursor-pointer hover:text-[#FF6129]" onclick="openPage('Discussions', this)">Discussions</div>
+            <div class="tablink font-semibold text-lg h-[47px] transition-all duration-300 cursor-pointer hover:text-[#FF6129]" onclick="openPage('Discussions', this)">Community</div>
             <div class="tablink font-semibold text-lg h-[47px] transition-all duration-300 cursor-pointer hover:text-[#FF6129]" onclick="openPage('Rewards', this)">Rewards</div>
         </div>
         <div class="bg-[#F5F8FA] py-[50px]">
@@ -180,9 +187,9 @@
                         </div>
                         <div id="Discussions" class="tabcontent hidden">
                             <div class="flex flex-col gap-5 w-[700px] shrink-0">
-                                <h3 class="font-bold text-2xl">Discussions</h3>
+                                <h3 class="font-bold text-2xl">Community</h3>
                                 <p class="font-medium leading-[30px]">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eos et accusantium quia exercitationem reiciendis? Doloribus, voluptate natus voluptas deserunt aliquam nesciunt blanditiis ipsum porro hic! Iusto maxime ullam soluta.
+                                    Join Grup Community dan temukan teman untuk diskusi dan belajar bersama.
                                 </p>                        
                             </div>
                         </div>
@@ -246,7 +253,7 @@
                     </div>
                 </div>
                 <div id="Screenshots" class="flex flex-col gap-3">
-                    <h3 class="title-section font-bold text-xl leading-[30px] ">Students Portfolio</h3>
+                    <h3 class="title-section font-bold text-xl leading-[30px] ">Sneak Peek</h3>
                     <div class="grid grid-cols-4 gap-5">
                         <div class="rounded-[20px] overflow-hidden w-full h-[200px] hover:shadow-[0_10px_20px_0_#0D051D20] transition-all duration-300" data-src="{{ asset('assets/thumbnail/image.png') }}" data-fancybox="gallery" data-caption="Caption #1">
                           <img src="{{ asset('assets/thumbnail/image.png') }}" class="object-cover h-full w-full" alt="image">

@@ -33,6 +33,16 @@
                         <x-input-error :messages="$errors->get('icon')" class="mt-2" />
                     </div>
 
+                    <div class="mt-4">
+                        <x-input-label for="type" :value="__('Type')" />
+                        <select id="type" name="type" class="block mt-1 w-full" required>
+                            <option value="social" {{ old('type') == 'social' ? 'selected' : '' }}>Social</option>
+                            <option value="personal" {{ old('type') == 'personal' ? 'selected' : '' }}>Personal</option>
+                            <option value="keduanya" {{ old('type') == 'keduanya' ? 'selected' : '' }}>Keduanya</option>
+                        </select>
+                        <x-input-error :messages="$errors->get('type')" class="mt-2" />
+                    </div>
+
                     <div class="flex items-center justify-end mt-4">
             
                         <button type="submit" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">

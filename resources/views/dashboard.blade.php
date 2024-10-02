@@ -113,7 +113,7 @@
                 @role('student')
                 <h3 class="text-indigo-950 font-bold text-2xl">Upgrade Skills Today</h3>
                 <p class="text-slate-500 text-base">
-                    Grow your career with experienced teachers in Alqowy Class.
+                    Grow your career with experienced teachers in Growhabbits Class.
                 </p>
                 <a href="{{route('front.index')}}" class="w-fit font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                     Explore Catalog
